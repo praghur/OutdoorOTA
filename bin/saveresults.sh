@@ -5,7 +5,7 @@ scp root@pc11-fort.emulab.net:ogstun_capture.pcap /home/ubuntu/
 #Save results from UE1
 scp root@ota-nuc1.emulab.net:ue1_results.csv /home/ubuntu/
 scp root@ota-nuc1.emulab.net:ue1_capture.pcap /home/ubuntu/
-scp root@ota-nuc1.emulab.net:/local/repository/etc/srsran/traceroute_results.csv /home/ubuntu/
+scp root@ota-nuc1.emulab.net:/local/repository/bin/traceroute_results.csv /home/ubuntu/
 
 #Save results from UE4
 scp root@nuc1.web.powderwireless.net:ue2_results.csv /home/ubuntu/
