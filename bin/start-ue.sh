@@ -31,6 +31,7 @@ sudo ip route add 10.45.3.10 via 10.45.0.1
 #Install tshark 
 sudo apt update
 sudo apt install -y tshark
+#Start packet capture
 sudo tshark -i enxa686a3fc16a2 -T fields -e frame.time_epoch -e ip.src -e ip.dst -e ip.id -e udp.srcport -e udp.dstport -E header=y -E separator=, -E quote=d > ueTraff_results.csv
 tmux split-window -v
 sudo tcpdump -i enxa686a3fc16a2 -w ueTraff_capture.pcap
