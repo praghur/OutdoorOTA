@@ -17,6 +17,10 @@ tmux split-window -v
 /local/repository/bin/module-flight.sh
 /local/repository/bin/module-on.sh
 sudo ip route add 10.45.0.121 via 10.45.0.1
+#Run loopscript file
+cd /local/repository/bin/
+chmod +x loopscript.sh
+./loopscript.sh
 
 
 
