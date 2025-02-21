@@ -1,4 +1,3 @@
-set -ux
 tmux new-session -d -s ue1
 tmux split-window -v
 tmux select-layout even-vertical
@@ -10,7 +9,7 @@ sudo ip route add 10.45.2.10 via 10.45.0.1
 
 
 
-set -ux
+
 tmux new-session -d -s ue2
 tmux split-window -v
 tmux select-layout even-vertical
@@ -21,7 +20,7 @@ sudo quectel-CM -s internet -4
 sudo ip route add 10.45.1.10 via 10.45.0.1
 
 
-set -ux
+
 tmux new-session -d -s ue3
 tmux split-window -v
 tmux select-layout even-vertical
