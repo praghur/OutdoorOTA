@@ -11,3 +11,4 @@ sudo apt install -y tshark
 #Continue with packet capture
 sudo tshark -i ogstun -T fields -e frame.time_epoch -e ip.src -e ip.dst -e ip.id -e udp.srcport -e udp.dstport -E header=y -E separator=, -E quote=d > cn_results.csv
 sudo tcpdump -i ogstun -w ogstun_capture.pcap
+
