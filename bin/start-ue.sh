@@ -67,6 +67,7 @@ sudo apt install -y tshark
 sudo tshark -i enx7a6202a42b3f -T fields -e frame.time_epoch -e ip.src -e ip.dst -e ip.id -e udp.srcport -e udp.dstport -E header=y -E separator=, -E quote=d > ue2_results.csv
 tmux split-window -v
 sudo tcpdump -i enx7a6202a42b3f -w ue2_capture.pcap
+tmux split-window -v
 /local/repository/bin/module-off.sh
 /local/repository/bin/module-flight.sh
 /local/repository/bin/module-on.sh
