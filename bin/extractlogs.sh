@@ -20,13 +20,15 @@ while IFS= read -r line; do
         sinr_eq=$(echo $line | grep -oP 'sinr_eq\[sel\]=\K[^\s]+')
         
         # Append the timestamp and sinr_eq[sel] value to the CSV file
-        echo "$timestamp, $sinr_eq" >> $output_csv
+        echo "$timestamp, $sinr_eq" >> $output_csv1
 
     # Check if the line contains "h_id=" and does not contain the date. This is done to reduce traffic
     if [[ $line == *"h_id="* && $line != *"2025-"* ]]; then
     # Append the entire line to the second CSV file
     echo "$line" >> $output_csv2
     fi
+    fi
+    
 done < "$log_file"
 
 echo "Extraction complete. The CSV files are saved at $output_csv1 and $output_csv2"
