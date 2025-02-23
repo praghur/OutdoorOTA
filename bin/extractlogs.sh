@@ -6,7 +6,7 @@ output_csv1="/home/ubuntu/snr_logs.csv"
 output_csv2="/home/ubuntu/harq_logs.csv"
 
 # Print the CSV headers
-echo "Log Line" > $output_csv1
+echo "Timestamp, SINR_eq[sel]" > $output_csv1
 echo "Log Line" > $output_csv2
 
 # Read the log file line by line
