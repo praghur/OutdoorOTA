@@ -59,20 +59,25 @@ cd $SRCDIR
 wget https://raw.githubusercontent.com/open5gs/open5gs/main/misc/db/open5gs-dbctl
 chmod +x open5gs-dbctl
   
-##For UE1 connecting with gNB1
+##For UE1 
 ./open5gs-dbctl add_ue_with_slice 999990000000000 00112233445566778899aabbccddeeff 0ed47545168eafe2c39c075829a7b61f internet 1 0x000001 # IMSI,K,OPC
 ./open5gs-dbctl type 999990000000000 1  # APN type IPV4
 ./open5gs-dbctl static_ip 999990000000000 10.45.1.10
 
-##For UE2 connecting with gNB2
+##For UE2 
 ./open5gs-dbctl add_ue_with_slice 999990000000001 00112233445566778899aabbccddeeff 0ed47545168eafe2c39c075829a7b61f internet 2 0x000001 # IMSI,K,OPC
 ./open5gs-dbctl type 999990000000001 1  # APN type IPV4
 ./open5gs-dbctl static_ip 999990000000001 10.45.2.10
 
-##For UE3 connecting with gNB3
-./open5gs-dbctl add_ue_with_slice 999990000000002 00112233445566778899aabbccddeeff 0ed47545168eafe2c39c075829a7b61f internet 3 0x000001 # IMSI,K,OPC
+##For UE3 
+./open5gs-dbctl add_ue_with_slice 999990000000002 00112233445566778899aabbccddeeff 0ed47545168eafe2c39c075829a7b61f internet 2 0x000001 # IMSI,K,OPC
 ./open5gs-dbctl type 999990000000002 1  # APN type IPV4
 ./open5gs-dbctl static_ip 999990000000002 10.45.3.10
+
+##For UE4
+./open5gs-dbctl add_ue_with_slice 999990000000121 00112233445566778899aabbccddeeff 0ed47545168eafe2c39c075829a7b61f internet 1 0x000001 # IMSI,K,OPC
+./open5gs-dbctl type 999990000000121 1  # APN type IPV4
+./open5gs-dbctl static_ip 999990000000121 10.45.0.121
 
 #Install Web UI for UE DBCTL
 sudo apt update
