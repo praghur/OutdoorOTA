@@ -14,7 +14,7 @@ while IFS= read -r line; do
     # Check if the line contains "sinr_eq[sel]"
     if [[ $line == *"sinr_eq[sel]"* ]]; then
         # Extract the timestamp from the previous line containing "PUSCH"
-        timestamp=$(grep -B 1 "sinr_eq[sel]" "$log_file" | grep "PUSCH" | awk '{print $1}')
+        timestamp=$(grep -B 40 "sinr_eq[sel]" "$log_file" | grep "PUSCH" | awk '{print $1}')
         
         # Extract the sinr_eq[sel] value
         sinr_eq=$(echo $line | grep -oP 'sinr_eq\[sel\]=\K[^\s]+')
