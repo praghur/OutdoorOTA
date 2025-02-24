@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define the input log file and output CSV files
-log_file="logfile.log"
-snr_csv="output.csv"
+log_file="gnb1.log"
+snr_csv="snr_logs.csv"
 harq_csv="harq_logs.csv"
 
 # Initialize the CSV files with headers
@@ -32,7 +32,7 @@ do
   fi
   
   # Check if the line contains "PUSCH" or "PDSCH" for harq_logs.csv
-  if [[ $line == *"PUSCH"* || $line == *"PDSCH"* ]]; then
+  if [[ $line == *"PUSCH"* || $line == *"PDSCH"* && $line == *"h_id"* ]]; then
     # Extract the timestamp, type (PUSCH or PDSCH), and h_id
     timestamp=$(echo $line | awk '{print $1}')
     type=$(echo $line | grep -oP '(PUSCH|PDSCH)')
