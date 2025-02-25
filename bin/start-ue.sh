@@ -1,7 +1,7 @@
 #For UE1
 tmux new-session -d -s ue1
-tmux attach-session -d -t ue1
 tmux split-window -v
+tmux attach-session -d -t ue1
 tmux set -g mouse
 sudo quectel-CM -s internet -4
 tmux split-window -v
