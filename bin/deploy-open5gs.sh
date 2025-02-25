@@ -96,4 +96,4 @@ curl -fsSL https://open5gs.org/open5gs/assets/webui/install | sudo -E bash -
 
 touch $SRCDIR/open5gs-setup-complete
 #For WebUI
-#ssh root@pc05-fort.emulab.net -C -L 9999:127.0.0.1:9999 
+#ssh root@pc11-fort.emulab.net -C -L 9999:127.0.0.1:9999 
