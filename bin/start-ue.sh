@@ -58,9 +58,9 @@ tmux split-window -v
 sudo ip route add 10.45.2.10 via 10.45.0.1
 
 #For UE4
-tmux new-session -d -s ue2
+tmux new-session -d -s ue4
 tmux split-window -v
-tmux attach-session -d -t ue2
+tmux attach-session -d -t ue4
 tmux set -g mouse
 sudo quectel-CM -s internet -4
 tmux split-window -v
