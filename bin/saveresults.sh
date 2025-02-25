@@ -16,16 +16,16 @@ scp root@ota-nuc2.emulab.net:ueTraff_results.csv /home/ubuntu/
 scp root@ota-nuc2.emulab.net:ueTraff_capture.pcap /home/ubuntu/
 
 #Save results from gnb1
-scp root@pc04-meb.emulab.net:/tmp/gnb1_mac.pcap /home/ubuntu/
-scp root@pc04-meb.emulab.net:/tmp/gnb1_ngap.pcap /home/ubuntu/
-scp root@pc04-meb.emulab.net:/tmp/gnb1-trace.log /home/ubuntu/
-scp root@pc04-meb.emulab.net:/tmp/gnb1.log /home/ubuntu/
+scp root@pc05-fort.emulab.net:/tmp/gnb1_mac.pcap /home/ubuntu/
+scp root@pc05-fort.emulab.net:/tmp/gnb1_ngap.pcap /home/ubuntu/
+scp root@pc05-fort.emulab.net:/tmp/gnb1-trace.log /home/ubuntu/
+scp root@pc05-fort.emulab.net:/tmp/gnb1.log /home/ubuntu/
 
 #Save results from gnb2
-scp root@pc04-meb.emulab.net:/tmp/gnb2_mac.pcap /home/ubuntu/
-scp root@pc04-meb.emulab.net:/tmp/gnb2_ngap.pcap /home/ubuntu/
-scp root@pc04-meb.emulab.net:/tmp/gnb2-trace.log /home/ubuntu/
-scp root@pc04-meb.emulab.net:/tmp/gnb2.log /home/ubuntu/
+scp root@pc01-meb.emulab.net:/tmp/gnb2_mac.pcap /home/ubuntu/
+scp root@pc01-meb.emulab.net:/tmp/gnb2_ngap.pcap /home/ubuntu/
+scp root@pc01-meb.emulab.net:/tmp/gnb2-trace.log /home/ubuntu/
+scp root@pc01-meb.emulab.net:/tmp/gnb2.log /home/ubuntu/
 
 
 
