@@ -25,7 +25,7 @@ scp root@pc05-fort.emulab.net:/tmp/gnb1.log /home/ubuntu/
 scp root@pc01-meb.emulab.net:/tmp/gnb2_mac.pcap /home/ubuntu/
 scp root@pc01-meb.emulab.net:/tmp/gnb2_ngap.pcap /home/ubuntu/
 scp root@pc01-meb.emulab.net:/tmp/gnb2-trace.log /home/ubuntu/
-scp root@pc01-meb.emulab.net:/tmp/gnb2.log /home/ubuntu/
+scp root@pc01-meb.emulab.net:/var/log/gnb2.log /home/ubuntu/
 
 
 
