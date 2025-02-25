@@ -9,9 +9,9 @@ tmux split-window -v
 sudo apt update
 sudo apt install -y tshark
 #Start packet capture
-sudo tshark -i enx5e4cb4adde52 -T fields -e frame.time_epoch -e ip.src -e ip.dst -e ip.id -e udp.srcport -e udp.dstport -E header=y -E separator=, -E quote=d > ue1_results.csv
+sudo tshark -i enxfa1cc6cb0894 -T fields -e frame.time_epoch -e ip.src -e ip.dst -e ip.id -e udp.srcport -e udp.dstport -E header=y -E separator=, -E quote=d > ue1_results.csv
 tmux split-window -v
-sudo tcpdump -i enx5e4cb4adde52 -w ue1_capture.pcap
+sudo tcpdump -i enxfa1cc6cb0894 -w ue1_capture.pcap
 tmux split-window -v
 /local/repository/bin/module-off.sh
 /local/repository/bin/module-flight.sh
