@@ -4,7 +4,7 @@ tmux attach-session -d -t cn5g
 tmux set -g mouse
 sudo journalctl -u open5gs-amfd -u open5gs-smfd -u open5gs-nrfd -u open5gs-upfd -f --output cat
 
-#Install tshark in UE1 and UE2
+#Install tshark in CN
 sudo apt update
 sudo apt install -y tshark
 
