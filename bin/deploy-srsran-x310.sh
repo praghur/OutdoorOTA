@@ -61,7 +61,8 @@ sudo apt-get install -y \
 
 sudo uhd_images_downloader
 
-
+cd /var/tmp
+mv srsRAN_Project srsRAN_Project_OG
 cd $SRCDIR
 git clone $SRS_PROJECT_REPO
 cd srsRAN_Project
