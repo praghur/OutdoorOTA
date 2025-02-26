@@ -2,6 +2,9 @@ set -ex
 COMMIT_HASH=$1
 BINDIR=`dirname $0`
 ETCDIR=/local/repository/etc
+SRCDIR=/var/tmp
+CFGDIR=/local/repository/etc
+SRS_PROJECT_REPO="https://github.com/srsRAN/srsRAN_Project"
 source $BINDIR/common.sh
 
 if [ -f $SRCDIR/srs-setup-complete ]; then
