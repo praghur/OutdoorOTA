@@ -149,15 +149,6 @@ log:
   # fapi_level: info
   tracing_filename: gnb2_trace.log
 
-pcap:
-  mac_enable: true
-  mac_type: udp 
-  mac_filename: /tmp/gnb2_mac.pcap
-  ngap_enable: true
-  ngap_filename: /tmp/gnb2_ngap.pcap
-  n3_filename: /tmp/gnb2_n3.pcap 
-  n3_enable: true  
-
 metrics:
   autostart_stdout_metrics: true
 
