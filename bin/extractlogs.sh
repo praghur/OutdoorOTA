@@ -22,7 +22,7 @@ do
     do
       if [[ $next_line == *"sinr_eq[sel]="* ]]; then
         # Extract the sinr_eq[sel] value
-        sinr_eq_sel=$(echo $next_line | grep -oP 'sinr_eq\[sel\]=\K[0-9.]+')
+        sinr_eq_sel=$(echo $next_line | grep -oP 'sinr_eq\[sel\]=\K-?[0-9.]+')
         
         # Append the extracted values to the CSV file
         echo "$timestamp,$sinr_eq_sel" >> $snr_csv
