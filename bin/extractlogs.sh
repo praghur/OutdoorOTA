@@ -1,27 +1,46 @@
 #!/bin/bash
 
-# Define the log file and output CSV files
-log_file="/home/ubuntu/gnb1.log"
-output_csv1="/home/ubuntu/snr_logs.csv"
-output_csv2="/home/ubuntu/harq_logs.csv"
+# Define the input log file and output CSV files
+log_file="gnb1.log"
+snr_csv="snr_logs.csv"
+harq_csv="harq_logs.csv"
 
-# Print the CSV headers
-echo "Log Line" > $output_csv1
-echo "Log Line" > $output_csv2
+# Initialize the CSV files with headers
+echo "Timestamp,SINR_EQ_SEL" > $snr_csv
+echo "Timestamp,Type,H_ID" > $harq_csv
 
 # Read the log file line by line
-while IFS= read -r line; do
-    # Check if the line contains "2025-02-", "sinr_ch_est", or "sinr_eq[sel]"
-    if [[ $line == *"2025-02-"* || $line == *"sinr_ch_est"* || $line == *"sinr_eq[sel]"* ]]; then
-        # Append the entire line to the first CSV file
-        echo "$line" >> $output_csv1
-    fi
+while IFS= read -r line
+do
+  # Check if the line contains "PUSCH" or "PDSCH"
+  if [[ $line == *"PUSCH"* ]]; then
+    # Extract the timestamp
+    timestamp=$(echo $line | awk '{print $1}')
+    
+    # Read the next lines to find sinr_eq[sel]
+    while IFS= read -r next_line
+    do
+      if [[ $next_line == *"sinr_eq[sel]="* ]]; then
+        # Extract the sinr_eq[sel] value
+        sinr_eq_sel=$(echo $next_line | grep -oP 'sinr_eq\[sel\]=\K[0-9.]+')
+        
+        # Append the extracted values to the CSV file
+        echo "$timestamp,$sinr_eq_sel" >> $snr_csv
+        break
+      fi
+    done
+  fi
+  
+  # Check if the line contains "PUSCH" or "PDSCH" for harq_logs.csv
+  if [[ $line == *"PUSCH"* || $line == *"PDSCH"* && $line == *"h_id"* ]]; then
+    # Extract the timestamp, type (PUSCH or PDSCH), and h_id
+    timestamp=$(echo $line | awk '{print $1}')
+    type=$(echo $line | grep -oP '(PUSCH|PDSCH)')
+    h_id=$(echo $line | grep -oP 'h_id=\K[0-9]+')
+    
+    # Append the extracted values to the harq_logs.csv file
+    echo "$timestamp,$type,$h_id" >> $harq_csv
+  fi
+done < $log_file
 
-    # Check if the line contains "h_id=" and does not contain the date. This is done to reduce traffic
-    if [[ $line == *"h_id="* && $line != *"2025-"* ]]; then
-    # Append the entire line to the second CSV file
-    echo "$line" >> $output_csv2
-    fi
-done < "$log_file"
-
-echo "Extraction complete. The CSV files are saved at $output_csv1 and $output_csv2"
+echo "Extraction complete. The CSV files are saved at $snr_csv and $harq_csv"
