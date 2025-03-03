@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Define the input log file and output CSV files
-log_file="gnb1.log"
-snr_csv="snr_logs.csv"
-harq_csv="harq_logs.csv"
+log_file="/home/ubuntu/HybridOTA/BaseCase/gnb1.log"
+snr_csv="/home/ubuntu/HybridOTA/BaseCase/snr_logs_gnb1.csv"
+harq_csv="/home/ubuntu/HybridOTA/BaseCase/harq_logs_gnb1.csv"
 
 # Initialize the CSV files with headers
 echo "Timestamp,SINR_EQ_SEL" > $snr_csv
