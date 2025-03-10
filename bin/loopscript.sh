@@ -16,7 +16,11 @@ echo "Timestamp, Traceroute Result" > traceroute_results.csv
 # Run the traceroute function every hour for 24 hours
 for hour in {1..24}
 do
+  start_time=$(date +%s)  # Record the start time
   run_traceroute
+  end_time=$(date +%s)  # Record the end time
+  elapsed_time=$((end_time - start_time))  # Calculate the elapsed time
+  sleep_time=$((3600 - elapsed_time))  # Calculate the remaining sleep time
   echo "Completed hour $hour"  # Display the hour at the end of each iteration
-  sleep 600 #Sleep for 600 seconds to complete the hour
+  sleep $sleep_time  # Sleep for the remaining time to complete the hour
 done
