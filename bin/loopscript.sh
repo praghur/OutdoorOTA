@@ -18,5 +18,4 @@ for hour in {1..24}
 do
   run_traceroute
   echo "Completed hour $hour"  # Display the hour at the end of each iteration
-  sleep 3600  # Wait for an hour before the next set of runs
 done
