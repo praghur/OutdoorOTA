@@ -6,7 +6,7 @@ sudo journalctl -u open5gs-amfd -u open5gs-smfd -u open5gs-nrfd -u open5gs-upfd 
 
 #Install tshark in CN
 sudo apt update
-sudo apt install -y tshark
+sudo apt install tshark
 
 #Continue with packet capture
 sudo tshark -i ogstun -T fields -e frame.time_epoch -e ip.src -e ip.dst -e ip.id -e udp.srcport -e udp.dstport -E header=y -E separator=, -E quote=d > cn_results.csv
