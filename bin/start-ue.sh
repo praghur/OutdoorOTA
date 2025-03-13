@@ -7,7 +7,7 @@ sudo quectel-CM -s internet -4
 tmux split-window -v
 #Install tshark 
 sudo apt update
-sudo apt install -y tshark
+sudo apt install tshark
 #Start packet capture
 sudo tshark -i enx76da8884639d -T fields -e frame.time_epoch -e ip.src -e ip.dst -e ip.id -e udp.srcport -e udp.dstport -E header=y -E separator=, -E quote=d > ue1_results.csv
 tmux split-window -v
@@ -33,7 +33,7 @@ sudo quectel-CM -s internet -4
 tmux split-window -v
 #Install tshark 
 sudo apt update
-sudo apt install -y tshark
+sudo apt install tshark
 #Start packet capture
 sudo tshark -i enx5e59f51480bf -T fields -e frame.time_epoch -e ip.src -e ip.dst -e ip.id -e udp.srcport -e udp.dstport -E header=y -E separator=, -E quote=d > ueTraff_results.csv
 tmux split-window -v
@@ -66,7 +66,7 @@ sudo quectel-CM -s internet -4
 tmux split-window -v
 #Install tshark 
 sudo apt update
-sudo apt install -y tshark
+sudo apt install tshark
 #Start packet capture
 sudo tshark -i enxd6943dea0723 -T fields -e frame.time_epoch -e ip.src -e ip.dst -e ip.id -e udp.srcport -e udp.dstport -E header=y -E separator=, -E quote=d > ue2_results.csv
 tmux split-window -v
