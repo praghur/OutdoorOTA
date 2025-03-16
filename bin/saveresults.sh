@@ -8,8 +8,8 @@ scp root@ota-nuc1.emulab.net:ue1_capture.pcap /home/ubuntu/
 scp root@ota-nuc1.emulab.net:/local/repository/bin/traceroute_results.csv /home/ubuntu/
 
 #Save results from UE4
-scp root@nuc1.web.powderwireless.net:/loal/repository/bin/ue2_results.csv /home/ubuntu/
-scp root@nuc1.web.powderwireless.net:/loal/repository/bin/ue2_capture.pcap /home/ubuntu/
+scp root@nuc1.web.powderwireless.net:/local/repository/bin/ue2_results.csv /home/ubuntu/
+scp root@nuc1.web.powderwireless.net:/local/repository/bin/ue2_capture.pcap /home/ubuntu/
 
 #Save results from UE2 - Background data
 scp root@ota-nuc2.emulab.net:ueTraff_results.csv /home/ubuntu/
