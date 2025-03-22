@@ -22,10 +22,16 @@ do
     sinr_eq_sel=$(echo $line | grep -oP 'sinr=\K[0-9.]+')
     # Append the extracted values to the CSV file
         echo "$timestamp,$sinr_eq_sel" >> $snr_csv 
+  fi
+  
+   # Check if the line contains "PDSCH"
+   if [[ $line == *"PDSCH"* ]]; then
+    # Extract the timestamp
+    timestamp=$(echo $line | awk '{print $1}')
     # Extract the h_id
     h_id=$(echo $line | grep -oP 'h_id=\K[0-9]+')  
     # Append the extracted values to the harq_logs.csv file
-        echo "$timestamp,$h_id" >> $harq_csv
+    echo "$timestamp,$h_id" >> $harq_csv
   fi
 done < $log_file
 
