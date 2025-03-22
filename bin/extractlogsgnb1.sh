@@ -1,5 +1,7 @@
 #!/bin/bash
-
+#gNb1:
+#HARQ ID - PUSCH
+#SINR - PUSCH
 # Define the input log file and output CSV files
 log_file="gnb1.log"
 snr_csv="snr_gnb1.csv"
