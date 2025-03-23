@@ -9,9 +9,9 @@ tmux split-window -v
 sudo apt update
 sudo apt install tshark
 #Start packet capture
-sudo tshark -i enxea1d244ca318 -T fields -e frame.time_epoch -e ip.src -e ip.dst -e ip.id -e udp.srcport -e udp.dstport -E header=y -E separator=, -E quote=d > ue1_results.csv
+sudo tshark -i enxd63fb0a715a7 -T fields -e frame.time_epoch -e ip.src -e ip.dst -e ip.id -e udp.srcport -e udp.dstport -E header=y -E separator=, -E quote=d > ue1_results.csv
 tmux split-window -v
-sudo tcpdump -i enxea1d244ca318 -w ue1_capture.pcap
+sudo tcpdump -i enxd63fb0a715a7 -w ue1_capture.pcap
 tmux split-window -v
 /local/repository/bin/module-off.sh
 /local/repository/bin/module-flight.sh
@@ -35,9 +35,9 @@ tmux split-window -v
 sudo apt update
 sudo apt install tshark
 #Start packet capture
-sudo tshark -i wwan0_1 -T fields -e frame.time_epoch -e ip.src -e ip.dst -e ip.id -e udp.srcport -e udp.dstport -E header=y -E separator=, -E quote=d > ueTraff_results.csv
+sudo tshark -i enx329df72446e5 -T fields -e frame.time_epoch -e ip.src -e ip.dst -e ip.id -e udp.srcport -e udp.dstport -E header=y -E separator=, -E quote=d > ueTraff_results.csv
 tmux split-window -v
-sudo tcpdump -i wwan0_1 -w ueTraff_capture.pcap
+sudo tcpdump -i enx329df72446e5 -w ueTraff_capture.pcap
 tmux split-window -v
 /local/repository/bin/module-off.sh
 /local/repository/bin/module-flight.sh
@@ -68,9 +68,9 @@ tmux split-window -v
 sudo apt update
 sudo apt install tshark
 #Start packet capture
-sudo tshark -i enx2ebfdf1b6432 -T fields -e frame.time_epoch -e ip.src -e ip.dst -e ip.id -e udp.srcport -e udp.dstport -E header=y -E separator=, -E quote=d > ue2_results.csv
+sudo tshark -i enx5e0ec451781c -T fields -e frame.time_epoch -e ip.src -e ip.dst -e ip.id -e udp.srcport -e udp.dstport -E header=y -E separator=, -E quote=d > ue2_results.csv
 tmux split-window -v
-sudo tcpdump -i enx2ebfdf1b6432 -w ue2_capture.pcap
+sudo tcpdump -i enx5e0ec451781c -w ue2_capture.pcap
 tmux split-window -v
 /local/repository/bin/module-off.sh
 /local/repository/bin/module-flight.sh
